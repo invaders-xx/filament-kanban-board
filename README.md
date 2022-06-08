@@ -8,7 +8,6 @@
 Define a Kanban page within your Filament's application. It can be a page or a resource's page.
 <img width="1471" alt="image" src="https://user-images.githubusercontent.com/604907/172618602-d1bf4377-109c-4316-8a75-ac78a0a70e9b.png">
 
-
 ## Installation
 
 You can install the package via composer:
@@ -43,6 +42,24 @@ public string $recordContentView = 'filament-kanban-board::record-content';
 ```
 
 in your class to add more content to your kanban's boxes.
+
+You can define your own styles for each element of the Kanban:
+
+```php
+public function styles(): array
+{
+    return [
+        'wrapper' => 'w-full h-full flex space-x-4 overflow-x-auto',
+        'kanbanWrapper' => 'h-full flex-1',
+        'kanban' => 'bg-primary-200 rounded px-2 flex flex-col h-full',
+        'kanbanHeader' => 'p-2 text-sm text-gray-900',
+        'kanbanFooter' => '',
+        'kanbanRecords' => 'space-y-2 p-2 flex-1 overflow-y-auto',
+        'record' => 'shadow bg-white dark:bg-gray-800 p-2 rounded border',
+        'recordContent' => 'w-full',
+    ];
+}
+```
 
 ## Usage
 
