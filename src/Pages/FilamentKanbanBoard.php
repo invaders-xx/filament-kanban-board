@@ -56,6 +56,7 @@ class FilamentKanbanBoard extends Page
 
                 return $status;
             });
+
         return [
             'records' => $records,
             'statuses' => $statuses,
