@@ -3,8 +3,8 @@
 namespace InvadersXX\FilamentKanbanBoard\Tests;
 
 use Illuminate\Database\Eloquent\Factories\Factory;
-use Orchestra\Testbench\TestCase as Orchestra;
 use InvadersXX\FilamentKanbanBoard\FilamentKanbanBoardServiceProvider;
+use Orchestra\Testbench\TestCase as Orchestra;
 
 class TestCase extends Orchestra
 {
