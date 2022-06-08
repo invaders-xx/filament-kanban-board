@@ -6,6 +6,8 @@
 [![Total Downloads](https://img.shields.io/packagist/dt/invaders-xx/filament-kanban-board.svg?style=flat-square)](https://packagist.org/packages/invaders-xx/filament-kanban-board)
 
 Define a Kanban page within your Filament's application. It can be a page or a resource's page.
+<img width="1471" alt="image" src="https://user-images.githubusercontent.com/604907/172618602-d1bf4377-109c-4316-8a75-ac78a0a70e9b.png">
+
 
 ## Installation
 
