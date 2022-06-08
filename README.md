@@ -34,6 +34,14 @@ Optionally, you can publish the views using
 php artisan vendor:publish --tag="filament-kanban-board-views"
 ```
 
+You can also specify your own views to change the behaviour:
+
+```php
+public string $recordContentView = 'filament-kanban-board::record-content';
+```
+
+in your class to add more content to your kanban's boxes.
+
 ## Usage
 
 In order to use this component, you must create a new Filament Page that extends from FilamentKanbanBoard
