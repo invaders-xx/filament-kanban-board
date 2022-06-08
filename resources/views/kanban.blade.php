@@ -2,14 +2,14 @@
 <div class="{{ $styles['kanbanWrapper'] }}">
     <div class="{{ $styles['kanban'] }}" id="{{ $status['id'] }}">
 
-        @include($statusHeaderView, [
+        @include($kanbanHeaderView, [
             'status' => $status
         ])
 
         <div
-            id="{{ $status['statusRecordsId'] }}"
+            id="{{ $status['kanbanRecordsId'] }}"
             data-status-id="{{ $status['id'] }}"
-            class="{{ $styles['statusRecords'] }}">
+            class="{{ $styles['kanbanRecords'] }}">
 
             @foreach($status['records'] as $record)
                 @include($recordView, [
@@ -19,7 +19,7 @@
 
         </div>
 
-        @include($statusFooterView, [
+        @include($kanbanFooterView, [
             'status' => $status
         ])
 

@@ -1,7 +1,7 @@
 <script>
     window.onload = () => {
         @foreach($statuses as $status)
-        Sortable.create(document.getElementById('{{ $status['statusRecordsId'] }}'), {
+        Sortable.create(document.getElementById('{{ $status['kanbanRecordsId'] }}'), {
             group: '{{ $sortableBetweenStatuses ? $status['group'] : $status['id'] }}',
             animation: 0,
             ghostClass: '{{ $ghostClass }}',

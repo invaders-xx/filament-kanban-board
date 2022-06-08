@@ -1,19 +1,19 @@
 <x-filament::page>
     <div>
         <div>
-            @includeIf($beforeStatusBoardView)
+            @includeIf($beforeKanbanBoardView)
         </div>
 
         <div class="{{ $styles['wrapper'] }}">
             @foreach($statuses as $status)
-                @include($statusView, [
+                @include($kanbanView, [
                     'status' => $status
                 ])
             @endforeach
         </div>
 
         <div>
-            @includeIf($afterStatusBoardView)
+            @includeIf($afterKanbanBoardView)
         </div>
 
         <div wire:ignore>
