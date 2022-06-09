@@ -35,7 +35,7 @@ Optionally, you can publish the views using
 php artisan vendor:publish --tag="filament-kanban-board-views"
 ```
 
-You can also specify your own views to change the behaviour:
+You can also specify your own view for record content to change the behaviour:
 
 ```php
 public string $recordContentView = 'filament-kanban-board::record-content';
@@ -95,6 +95,8 @@ class KanbanOrders extends FilamentKanbanBoard
 For each status we define, we must return an array with at least 2 keys: id and title.
 
 Now, for records() we may define a list of Sales Orders that come from an Eloquent model in our project.
+
+Please note that each item has to have an id, title (add more information if you wish to override the record's content view and add some more stuff) and status
 
 ```php
 public function records() : Collection
