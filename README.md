@@ -52,6 +52,7 @@ public function styles(): array
         'wrapper' => 'w-full h-full flex space-x-4 overflow-x-auto',
         'kanbanWrapper' => 'h-full flex-1',
         'kanban' => 'bg-primary-200 rounded px-2 flex flex-col h-full',
+        'kanbanHeader' => 'p-2 text-sm text-gray-900',
         'kanbanFooter' => '',
         'kanbanRecords' => 'space-y-2 p-2 flex-1 overflow-y-auto',
         'record' => 'shadow bg-white dark:bg-gray-800 p-2 rounded border',

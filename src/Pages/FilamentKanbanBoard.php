@@ -12,6 +12,7 @@ class FilamentKanbanBoard extends Page
     public bool $sortableBetweenStatuses = false;
     public string $kanbanBoardView = 'filament-kanban-board::kanban-header';
     public string $kanbanView = 'filament-kanban-board::kanban';
+    public string $kanbanHeaderView = 'filament-kanban-board::kanban-header';
     public string $kanbanFooterView = 'filament-kanban-board::kanban-footer';
     public string $recordView = 'filament-kanban-board::record';
     public string $recordContentView = 'filament-kanban-board::record-content';
@@ -79,6 +80,7 @@ class FilamentKanbanBoard extends Page
             'wrapper' => 'w-full h-full flex space-x-4 overflow-x-auto',
             'kanbanWrapper' => 'h-full flex-1',
             'kanban' => 'bg-primary-200 rounded px-2 flex flex-col h-full',
+            'kanbanHeader' => 'p-2 text-sm text-gray-900',
             'kanbanFooter' => '',
             'kanbanRecords' => 'space-y-2 p-2 flex-1 overflow-y-auto',
             'record' => 'shadow bg-white dark:bg-gray-800 p-2 rounded border',
