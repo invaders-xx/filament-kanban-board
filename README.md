@@ -94,9 +94,7 @@ class KanbanOrders extends FilamentKanbanBoard
 
 For each status we define, we must return an array with at least 2 keys: id and title.
 
-Now, for records() we may define a list of Sales Orders that come from an Eloquent model in our project.
-
-Please note that each item has to have an id, title (add more information if you wish to override the record's content view and add some more stuff) and status
+Now, for records() we may define a list of Sales Orders that come from an Eloquent model in your project.
 
 ```php
 public function records() : Collection
@@ -114,7 +112,7 @@ public function records() : Collection
 
 As you might see in the above snippet, we must return a collection of array items where each item must have at least 3
 keys: id, title and status. The last one is of most importance since it is going to be used to match to which status the
-record belongs to. For this matter, the component matches status and records with the following comparison
+record belongs to. For this matter, the component matches status and records with the following comparison.
 
 ```php
 $status['id'] == $record['status'];
