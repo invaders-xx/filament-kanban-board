@@ -1,11 +1,6 @@
 {{-- Injected variables $status, $styles --}}
 <div class="{{ $styles['kanbanWrapper'] }}">
-    <div class="{{ $styles['kanban'] }}" id="{{ $status['id'] }}">
-
-        @include($kanbanHeaderView, [
-            'status' => $status
-        ])
-
+    <x-filament::card :header="$status['title']" class="{{ $styles['kanban'] }}" id="{{ $status['id'] }}">
         <div
             id="{{ $status['kanbanRecordsId'] }}"
             data-status-id="{{ $status['id'] }}"
@@ -23,5 +18,5 @@
             'status' => $status
         ])
 
-    </div>
+    </x-filament::card>
 </div>
