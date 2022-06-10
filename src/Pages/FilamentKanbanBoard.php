@@ -74,7 +74,7 @@ class FilamentKanbanBoard extends Page
         return collect();
     }
 
-    public function styles(): array
+    protected function styles(): array
     {
         return [
             'wrapper' => 'w-full h-full flex space-x-4 overflow-x-auto',
