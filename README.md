@@ -46,7 +46,7 @@ in your class to add more content to your kanban's boxes.
 You can define your own styles for each element of the Kanban:
 
 ```php
-public function styles(): array
+protected function styles(): array
 {
     return [
         'wrapper' => 'w-full h-full flex space-x-4 overflow-x-auto',
