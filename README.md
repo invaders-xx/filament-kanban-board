@@ -68,7 +68,7 @@ In order to use this component, you must create a new Filament Page that extends
 ```php
 class KanbanOrders extends FilamentKanbanBoard
 {
-    public function statuses() : Collection
+    protected function statuses() : Collection
     {
         return collect([
             [
@@ -97,7 +97,7 @@ For each status we define, we must return an array with at least 2 keys: id and 
 Now, for records() we may define a list of Sales Orders that come from an Eloquent model in your project.
 
 ```php
-public function records() : Collection
+protected function records() : Collection
 {
     return SalesOrder::all()
         ->map(function (SalesOrder $item) {
