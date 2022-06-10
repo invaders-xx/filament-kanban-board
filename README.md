@@ -99,12 +99,12 @@ Now, for records() we may define a list of Sales Orders that come from an Eloque
 ```php
 public function records() : Collection
 {
-    return SalesOrder::query()
-        ->map(function (SalesOrder $salesOrder) {
+    return SalesOrder::all()
+        ->map(function (SalesOrder $item) {
             return [
-                'id' => $salesOrder->id,
-                'title' => $salesOrder->client,
-                'status' => $salesOrder->status,
+                'id' => $item->id,
+                'title' => $item->customer->name,
+                'status' => $item->status,
             ];
         });
 }
