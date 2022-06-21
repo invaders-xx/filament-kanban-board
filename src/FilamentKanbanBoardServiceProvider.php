@@ -8,7 +8,6 @@ use Spatie\LaravelPackageTools\Package;
 class FilamentKanbanBoardServiceProvider extends PluginServiceProvider
 {
     protected array $scripts = [
-        'https://unpkg.com/@nextapps-be/livewire-sortablejs@0.1.1/dist/livewire-sortable.js',
     ];
 
     public function configurePackage(Package $package): void
