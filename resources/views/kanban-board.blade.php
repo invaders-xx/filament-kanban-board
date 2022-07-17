@@ -1,5 +1,5 @@
 <x-filament::page>
-    <x-filament::card wire:ignore>
+    <x-filament::card>
         <div>
             <div>
                 @includeIf($beforeKanbanBoardView)
@@ -17,7 +17,7 @@
                 @includeIf($afterKanbanBoardView)
             </div>
 
-            <div>
+            <div wire:ignore>
                 @includeWhen($sortable, 'filament-kanban-board::sortable', [
                     'sortable' => $sortable,
                     'sortableBetweenStatuses' => $sortableBetweenStatuses,
