@@ -1,5 +1,5 @@
 <x-filament::page>
-    <x-filament::card>
+    <x-filament::card wire:ignore.self>
         <div>
             <div>
                 @includeIf($beforeKanbanBoardView)
