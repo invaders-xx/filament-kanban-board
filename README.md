@@ -184,6 +184,52 @@ To enable `onRecordClick` set it in the class:
 public bool $recordClickEnabled = true;
 ```
 
+## Editing records in Modal window
+
+You can enable Modal window to edit records: 
+
+Make sure to have `$recordClickEnabled` set to `true` and `$modalRecordClickEnabled` set to `true`:
+```php
+public bool $recordClickEnabled = true;
+public bool $modalRecordClickEnabled = true;
+```
+
+You can set modal title, width, save / cancel button labels: 
+```php
+protected string $editModalRecordTitle = 'Edit modal record title';
+protected string $editModalRecordWidth = '2xl';
+public string $editModalSaveButtonLabel = "Save";
+public string $editModalCancelButtonLabel = "Cancel";
+```
+
+You can set Form components by overriding function `getEditModalRecordSchema()`:
+
+```php
+protected static function getEditModalRecordSchema(): array
+    {
+        return [
+            TextInput::make('title'),
+            TextInput::make('status'),
+        ];
+    }
+```
+
+To call Modal with Form override `onRecordClick()` function and add the following:
+```php
+public function onRecordClick($recordId, $data): void
+    {
+        $this->editModalRecord->fill($data);
+        $this->dispatchBrowserEvent('open-modal', ['id' => 'kanban--edit-modal-record']);
+    }
+```
+To manipulate with data from the Modal Form override `editRecord()` function:
+```php
+public function editRecord(array $data): void
+    {
+
+    }
+```
+
 ## Testing
 
 ```bash

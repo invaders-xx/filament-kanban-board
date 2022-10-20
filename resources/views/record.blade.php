@@ -3,7 +3,7 @@
 <div
     id="{{ $record['id'] }}"
     @if($recordClickEnabled)
-        wire:click="onRecordClick('{{ $record['id'] }}')"
+        wire:click="onRecordClick('{{ $record['id'] }}',{{@json_encode($record)}})"
     @endif
     class="{{ $styles['record'] }}">
 

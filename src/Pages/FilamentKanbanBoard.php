@@ -2,11 +2,18 @@
 
 namespace InvadersXX\FilamentKanbanBoard\Pages;
 
+use Filament\Forms\Concerns\InteractsWithForms;
+use Filament\Forms\Contracts\HasForms;
 use Filament\Pages\Page;
 use Illuminate\Support\Collection;
+use InvadersXX\FilamentKanbanBoard\Concerns\InteractsWithEditRecordModal;
+use InvadersXX\FilamentKanbanBoard\Forms\EditModalRecord;
 
-class FilamentKanbanBoard extends Page
+class FilamentKanbanBoard extends Page implements HasForms
 {
+    use InteractsWithForms, EditModalRecord, InteractsWithEditRecordModal{
+        InteractsWithEditRecordModal::getForms insteadof InteractsWithForms;
+    }
     protected static string $view = 'filament-kanban-board::kanban-board';
     public bool $sortable = false;
     public bool $sortableBetweenStatuses = false;
@@ -21,6 +28,11 @@ class FilamentKanbanBoard extends Page
     public ?string $afterKanbanBoardView = null;
     public string $ghostClass = 'bg-warning-600';
     public bool $recordClickEnabled = false;
+    public bool $modalRecordClickEnabled = false;
+    protected string $editModalRecordTitle = 'Edit modal record title';
+    protected string $editModalRecordWidth = '2xl';
+    public string $editModalSaveButtonLabel = "Save";
+    public string $editModalCancelButtonLabel = "Cancel";
 
     public function onStatusSorted($recordId, $statusId, $orderedIds): void
     {
@@ -32,10 +44,11 @@ class FilamentKanbanBoard extends Page
         //
     }
 
-    public function onRecordClick($recordId): void
+    public function onRecordClick($recordId,$data): void
     {
         //
     }
+
 
     protected function getViewData(): array
     {
@@ -62,6 +75,25 @@ class FilamentKanbanBoard extends Page
             'statuses' => $statuses,
             'styles' => $styles,
         ];
+    }
+
+    protected function getEditModalRecordTitle(): string
+    {
+        return $this->editModalRecordTitle;
+    }
+
+    protected function getEditModalRecordWidth(): string
+    {
+        return $this->editModalRecordWidth;
+    }
+
+    protected function getEditModalSaveButtonLabel(): string
+    {
+        return $this->editModalSaveButtonLabel;
+    }
+    protected function getEditModalCancelButtonLabel(): string
+    {
+        return $this->editModalCancelButtonLabel;
     }
 
     protected function statuses(): Collection
