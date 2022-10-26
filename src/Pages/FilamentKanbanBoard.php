@@ -44,11 +44,10 @@ class FilamentKanbanBoard extends Page implements HasForms
         //
     }
 
-    public function onRecordClick($recordId,$data): void
+    public function onRecordClick($recordId, $data): void
     {
         //
     }
-
 
     protected function getViewData(): array
     {
@@ -91,6 +90,7 @@ class FilamentKanbanBoard extends Page implements HasForms
     {
         return $this->editModalSaveButtonLabel;
     }
+
     protected function getEditModalCancelButtonLabel(): string
     {
         return $this->editModalCancelButtonLabel;

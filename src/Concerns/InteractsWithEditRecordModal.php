@@ -1,4 +1,5 @@
 <?php
+
 namespace InvadersXX\FilamentKanbanBoard\Concerns;
 
 use InvadersXX\FilamentKanbanBoard\Forms\EditModalRecord;
@@ -18,5 +19,4 @@ trait InteractsWithEditRecordModal
             $this->getEditModalRecordForm()
         );
     }
-
 }

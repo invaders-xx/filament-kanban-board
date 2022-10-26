@@ -1,6 +1,6 @@
 <?php
-namespace InvadersXX\FilamentKanbanBoard\Forms;
 
+namespace InvadersXX\FilamentKanbanBoard\Forms;
 
 trait EditModalRecord
 {
@@ -18,7 +18,6 @@ trait EditModalRecord
         // Override this function and do whatever you want with $data
     }
 
-
     protected static function getEditModalRecordSchema(): array
     {
         return [];
@@ -32,5 +31,4 @@ trait EditModalRecord
                 ->statePath('editModalRecordState'),
         ];
     }
-
 }
