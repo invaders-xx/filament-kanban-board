@@ -25,4 +25,7 @@
             </div>
         </div>
     </x-filament::card>
+    @if($recordClickEnabled && $modalRecordClickEnabled)
+        <x-filament-kanban-board::edit-modal-record/>
+    @endif
 </x-filament::page>
