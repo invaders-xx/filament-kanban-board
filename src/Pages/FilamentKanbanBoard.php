@@ -33,6 +33,10 @@ class FilamentKanbanBoard extends Page implements HasForms
     protected string $editModalRecordWidth = '2xl';
     public string $editModalSaveButtonLabel = "Save";
     public string $editModalCancelButtonLabel = "Cancel";
+    protected $listeners = [
+        'onStatusChanged' => 'onStatusChanged',
+        'onStatusSorted' => 'onStatusSorted',
+    ];
 
     public function onStatusSorted($recordId, $statusId, $orderedIds): void
     {
