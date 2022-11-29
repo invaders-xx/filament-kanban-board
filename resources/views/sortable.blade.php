@@ -24,14 +24,14 @@
                 const fromOrderedIds = [].slice.call(evt.from.children).map(child => child.id);
 
                 if (sameContainer) {
-                @this.call('onStatusSorted', recordId, fromStatusId, fromOrderedIds);
+                    Livewire.emit('onStatusSorted', recordId, fromStatusId, fromOrderedIds);
                     return;
                 }
 
                 const toStatusId = evt.to.dataset.statusId;
                 const toOrderedIds = [].slice.call(evt.to.children).map(child => child.id);
 
-            @this.call('onStatusChanged', recordId, toStatusId, fromOrderedIds, toOrderedIds);
+                Livewire.emit('onStatusChanged', recordId, toStatusId, fromOrderedIds, toOrderedIds);
             },
         });
         @endforeach
