@@ -113,7 +113,7 @@ class FilamentKanbanBoard extends Page implements HasForms
     protected function styles(): array
     {
         return [
-            'wrapper' => 'w-full h-full flex space-x-4 overflow-x-auto',
+            'wrapper' => 'w-full h-full flex space-x-4 rtl:space-x-reverse overflow-x-auto',
             'kanbanWrapper' => 'h-full flex-1',
             'kanban' => 'bg-primary-200 rounded px-2 flex flex-col h-full',
             'kanbanHeader' => 'p-2 text-sm text-gray-900',
