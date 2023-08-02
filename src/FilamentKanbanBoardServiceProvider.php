@@ -2,14 +2,11 @@
 
 namespace InvadersXX\FilamentKanbanBoard;
 
-use Filament\PluginServiceProvider;
+use Spatie\LaravelPackageTools\PackageServiceProvider;
 use Spatie\LaravelPackageTools\Package;
 
-class FilamentKanbanBoardServiceProvider extends PluginServiceProvider
-{
-    protected array $scripts = [
-    ];
-
+class FilamentKanbanBoardServiceProvider extends PackageServiceProvider
+{    
     public function configurePackage(Package $package): void
     {
         /*
