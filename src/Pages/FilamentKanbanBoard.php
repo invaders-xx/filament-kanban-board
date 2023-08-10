@@ -63,8 +63,8 @@ class FilamentKanbanBoard extends Page implements HasForms
 
         $statuses = $statuses
             ->map(function ($status) use ($records) {
-                $status['group'] = $this->id;
-                $status['kanbanRecordsId'] = "{$this->id}-{$status['id']}";
+                $status['group'] = $this->getId();
+                $status['kanbanRecordsId'] = "{$this->getId()}-{$status['id']}";
                 $status['records'] = $records
                     ->filter(function ($record) use ($status) {
                         return $this->isRecordInStatus($record, $status);
