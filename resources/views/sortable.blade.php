@@ -1,39 +1,49 @@
 <script>
     window.onload = () => {
-        @foreach($statuses as $status)
-        Sortable.create(document.getElementById('{{ $status['kanbanRecordsId'] }}'), {
-            group: '{{ $sortableBetweenStatuses ? $status['group'] : $status['id'] }}',
-            animation: 0,
-            ghostClass: '{{ $ghostClass }}',
+        @foreach ($statuses as $status)
 
-            setData: function (dataTransfer, dragEl) {
-                dataTransfer.setData('id', dragEl.id);
-            },
+            Sortable.create(document.getElementById('{{ $status['kanbanRecordsId'] }}'), {
+                group: '{{ $sortableBetweenStatuses ? $status['group'] : $status['id'] }}',
+                animation: 0,
+                ghostClass: '{{ $ghostClass }}',
 
-            onEnd: function (evt) {
-                const sameContainer = evt.from === evt.to;
-                const orderChanged = evt.oldIndex !== evt.newIndex;
+                setData: function(dataTransfer, dragEl) {
+                    dataTransfer.setData('id', dragEl.id);
+                },
 
-                if (sameContainer && !orderChanged) {
-                    return;
-                }
+                onEnd: function(evt) {
+                    const sameContainer = evt.from === evt.to;
+                    const orderChanged = evt.oldIndex !== evt.newIndex;
 
-                const recordId = evt.item.id;
+                    if (sameContainer && !orderChanged) {
+                        return;
+                    }
 
-                const fromStatusId = evt.from.dataset.statusId;
-                const fromOrderedIds = [].slice.call(evt.from.children).map(child => child.id);
+                    const recordId = evt.item.id;
 
-                if (sameContainer) {
-                    Livewire.dispatch('onStatusSorted', {'recordId': recordId, 'statusId' : fromStatusId, 'orderedIds' : fromOrderedIds});
-                    return;
-                }
+                    const fromStatusId = evt.from.dataset.statusId;
+                    const fromOrderedIds = [].slice.call(evt.from.children).map(child => child.id);
 
-                const toStatusId = evt.to.dataset.statusId;
-                const toOrderedIds = [].slice.call(evt.to.children).map(child => child.id);
+                    if (sameContainer) {
+                        Livewire.dispatch('onStatusSorted', {
+                            'recordId': recordId,
+                            'statusId': fromStatusId,
+                            'orderedIds': fromOrderedIds
+                        });
+                        return;
+                    }
 
-                Livewire.dispatch('onStatusChanged', {'recordId': recordId, 'statusId': toStatusId, 'fromOrderedIds': fromOrderedIds, 'toOrderedIds': toOrderedIds});
-            },
-        });
+                    const toStatusId = evt.to.dataset.statusId;
+                    const toOrderedIds = [].slice.call(evt.to.children).map(child => child.id);
+
+                    Livewire.dispatch('onStatusChanged', {
+                        'recordId': recordId,
+                        'statusId': toStatusId,
+                        'fromOrderedIds': fromOrderedIds,
+                        'toOrderedIds': toOrderedIds
+                    });
+                },
+            });
         @endforeach
     }
 </script>
