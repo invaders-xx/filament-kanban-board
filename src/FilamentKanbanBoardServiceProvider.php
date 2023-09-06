@@ -2,10 +2,10 @@
 
 namespace InvadersXX\FilamentKanbanBoard;
 
-use Spatie\LaravelPackageTools\PackageServiceProvider;
+use Filament\PluginServiceProvider;
 use Spatie\LaravelPackageTools\Package;
 
-class FilamentKanbanBoardServiceProvider extends PackageServiceProvider
+class FilamentKanbanBoardServiceProvider extends PluginServiceProvider
 {    
     public function configurePackage(Package $package): void
     {
