@@ -1,4 +1,4 @@
-<x-filament::page>
+<x-filament-panels::page>
     <x-filament::card wire:ignore.self>
         <div>
             <div>
@@ -28,4 +28,4 @@
     @if($recordClickEnabled && $modalRecordClickEnabled)
         <x-filament-kanban-board::edit-modal-record/>
     @endif
-</x-filament::page>
+</x-filament-panels::page>

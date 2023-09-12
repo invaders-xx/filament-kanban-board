@@ -1,4 +1,4 @@
-<x-filament::form wire:submit.prevent="onEditRecordSubmit">
+<x-filament-panels::form wire:submit.prevent="onEditRecordSubmit">
     <x-filament::modal id="kanban--edit-modal-record" :width="$this->getEditModalRecordWidth()">
         <x-slot name="header">
             <x-filament::modal.heading>
@@ -15,4 +15,4 @@
             </x-filament::button>
         </x-slot>
     </x-filament::modal>
-</x-filament::form>
+</x-filament-panels::form>
