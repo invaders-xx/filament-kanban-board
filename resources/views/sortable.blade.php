@@ -1,6 +1,8 @@
 <script>
     window.onload = () => {
         @foreach($statuses as $status)
+
+        {{-- Added space to fix issues with Livewire cutting off some code with comment block in livewire 3 and filament 3--}}
         Sortable.create(document.getElementById('{{ $status['kanbanRecordsId'] }}'), {
             group: '{{ $sortableBetweenStatuses ? $status['group'] : $status['id'] }}',
             animation: 0,
@@ -34,6 +36,7 @@
                 Livewire.emit('onStatusChanged', recordId, toStatusId, fromOrderedIds, toOrderedIds);
             },
         });
+
         @endforeach
     }
 </script>

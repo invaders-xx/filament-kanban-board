@@ -18,7 +18,7 @@
             </div>
 
             <div wire:ignore>
-                @includeWhen($sortable, 'filament-kanban-board::sortable', [
+                @includeWhen($sortable, $sortableView, [
                     'sortable' => $sortable,
                     'sortableBetweenStatuses' => $sortableBetweenStatuses,
                 ])
