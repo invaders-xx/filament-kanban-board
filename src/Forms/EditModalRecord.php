@@ -9,12 +9,12 @@ trait EditModalRecord
 
     public function onEditRecordSubmit(): void
     {
-        $this->editRecord($this->editModalRecord->getState());
+        $this->editRecord($this->editModalRecordId, $this->editModalRecord->getState());
 
         $this->dispatchBrowserEvent('close-modal', ['id' => 'kanban--edit-modal-record']);
     }
 
-    public function editRecord(array $data): void
+    public function editRecord($recordId, array $data): void
     {
         // Override this function and do whatever you want with $data
     }
