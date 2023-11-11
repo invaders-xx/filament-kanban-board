@@ -5,6 +5,7 @@ namespace InvadersXX\FilamentKanbanBoard\Forms;
 trait EditModalRecord
 {
     public $editModalRecordState = [];
+    public $editModalRecordId;
 
     public function onEditRecordSubmit(): void
     {
@@ -20,8 +21,10 @@ trait EditModalRecord
 
     public function onRecordClick($recordId, $data): void
     {
-        $this->editModalRecord->fill($this->getModalData($recordId, $data));
+        $this->editModalRecordId = $recordId;
         
+        $this->editModalRecord->fill($this->getModalData($recordId, $data));
+
         $this->dispatchBrowserEvent('open-modal', ['id' => 'kanban--edit-modal-record']);
     }
 
