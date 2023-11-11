@@ -47,17 +47,6 @@ class FilamentKanbanBoard extends Page implements HasForms
         //
     }
 
-    public function onRecordClick($recordId, $data): void
-    {
-        $this->editModalRecord->fill($this->getModalData($recordId, $data));
-        $this->dispatchBrowserEvent('open-modal', ['id' => 'kanban--edit-modal-record']);
-    }
-
-    public function getModalData($recordId, $data): array
-    {
-        return $data;
-    }
-
     protected function getViewData(): array
     {
         $statuses = $this->statuses();
