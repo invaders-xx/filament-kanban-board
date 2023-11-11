@@ -7,11 +7,10 @@ use Filament\Forms\Contracts\HasForms;
 use Filament\Pages\Page;
 use Illuminate\Support\Collection;
 use InvadersXX\FilamentKanbanBoard\Concerns\InteractsWithEditRecordModal;
-use InvadersXX\FilamentKanbanBoard\Forms\EditModalRecord;
 
 class FilamentKanbanBoard extends Page implements HasForms
 {
-    use InteractsWithForms, EditModalRecord, InteractsWithEditRecordModal{
+    use InteractsWithForms, InteractsWithEditRecordModal {
         InteractsWithEditRecordModal::getForms insteadof InteractsWithForms;
     }
     protected static string $view = 'filament-kanban-board::kanban-board';
